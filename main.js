@@ -35,13 +35,15 @@ function create_li() {
   item_delete.className = 'item__delete';
   item_delete.innerHTML = '<i class="fas fa-trash-alt"></i>';
   item.appendChild(item_delete);
+
+  item_delete.addEventListener('click', ()=> {
+    items.removeChild(item_row);
+  });
   
   const item_divider = document.createElement('div');
   item_divider.className = 'item__divider';
   item_row.appendChild(item_divider);
 
-  console.log(item_row);
-  console.log(item_name);
   item_name.innerHTML = input.value;
 
   input.value = null;
