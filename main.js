@@ -13,6 +13,12 @@ input.addEventListener('keypress', (key)=> {
 });
 
 function create_li() {
+
+  if (input.value == '') {
+    input.focus();
+    return
+  }
+
   const item_row = document.createElement('li');
   item_row.className = 'item__row';
   items.appendChild(item_row);
@@ -39,4 +45,5 @@ function create_li() {
   item_name.innerHTML = input.value;
 
   input.value = null;
+  input.focus();
 }
